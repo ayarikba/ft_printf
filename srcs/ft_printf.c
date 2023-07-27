@@ -10,15 +10,15 @@ int print(va_list lst, const char *x, int i)
     else if (x[i + 1] && x[i + 1] == 's')
         ret += print_str(va_arg(lst, char*));
     else if (x[i + 1] && x[i + 1] == 'p')
-        ret += print_ptr(va_arg(lst, void*));
+        ret += print_ptr(va_arg(lst, unsigned long long));
     else if (x[i + 1] && (x[i + 1] == 'd' || x[i + 1] == 'i'))
-        ret += print_num(va_arg(lst, int), 10, 0);
+        ret += print_num(va_arg(lst,  int ), 10, 0);
     else if (x[i + 1] && x[i + 1] == 'u')
         ret += print_num(va_arg(lst, unsigned int), 10, 0);
     else if (x[i + 1] && x[i + 1] == 'x')
-        ret += print_num(va_arg(lst, int),16, 0);
+        ret += print_num(va_arg(lst, unsigned  int),16, 0);
     else if (x[i + 1] && x[i + 1] == 'X')
-        ret += print_num(va_arg(lst, int),16, 1);
+        ret += print_num(va_arg(lst, unsigned  int),16, 1);
     else if (x[i + 1] && x[i + 1] == '%')
         ret += print_char('%');
     return (ret);
@@ -49,3 +49,4 @@ int ft_printf(const char *x, ...)
     va_end(lst);
     return (val);
 }
+

@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-SRCS = ft_printf.c ft_printf_utils.c
+SRCS = ft_printf.c ft_printf_utils.c 
 OBJS = $(SRCS:.c=.o)
 HEADER = libft.h
 
